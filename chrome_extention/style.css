@@ -1,0 +1,20 @@
+/* Cursor for when Shift is held down and selection is possible */
+body.magnifier-cursor-crosshair {
+  cursor: crosshair !important;
+}
+
+/* Style for the visual selection rectangle on the page (local to each frame) */
+.magnifier-selection-rect-visual {
+  position: fixed; /* Relative to the viewport of the current frame */
+  border: 2px dashed rgba(220, 30, 30, 0.85);
+  background-color: rgba(220, 30, 30, 0.15);
+  box-sizing: border-box;
+  z-index: 2147483647; /* Max z-index */
+  pointer-events: none; /* Doesn't interfere with mouse events underneath */
+}
+
+/*
+  No specific styles needed for the page when 'magnifier-is-active'
+  because the transform is applied directly via JavaScript.
+  If you had other global overrides, you could use a class on <html> or <body>.
+*/
